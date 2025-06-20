@@ -1,11 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an Account</title>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <header>
+        <h2>Create Account</h2>
+        <img src="" alt="" />
+      </header>
+      <main>
+        <form>
+          <div id="name">
+            <label for="fname">First name*</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Enter your first name"
+              required
+            />
+
+            <label for="lname">Last name*</label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+          <div id="email">
+            <label for="email">Email*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div id="pass">
+            <label for="password">Password*</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="********"
+              required
+            />
+
+            <label for="confirmation">Confirm Password*</label>
+            <input
+              type="password"
+              id="confirmation"
+              name="confirmation"
+              placeholder="Enter correct your confirm password"
+              required
+            />
+          </div>
+
+          <div id="info">
+            <fieldset>
+              <legend>Gender:</legend>
+
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="male" value="male" />
+
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="female" value="female" />
+            </fieldset>
+
+            <fieldset>
+              <legend>Hobbies</legend>
+
+              <label for="hobby1">Music</label>
+              <input type="checkbox" name="hobby1" id="hobby1" value="music" />
+
+              <label for="hobby2">Sports</label>
+              <input type="checkbox" name="hobby2" id="hobby2" value="sports" />
+
+              <label for="hobby3">Travel</label>
+              <input type="checkbox" name="hobby3" id="hobby3" value="travel" />
+
+              <label for="hobby4">Movies</label>
+              <input type="checkbox" name="hobby4" id="hobby4" value="movies" />
+            </fieldset>
+          </div>
+          <div id="income">
+            <label for="income_source">Source of Income</label>
+            <select name="income_source" id="income_source">
+              <option value="employed">Employed</option>
+              <option value="self-employed">Self-employed</option>
+              <option value="student">Student</option>
+              <option value="unemployed">Unemployed</option>
+            </select>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
 </html>
