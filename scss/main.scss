@@ -1,0 +1,150 @@
+@use "reset";
+@use "mixins" as mx;
+@use "variables" as vars;
+
+:root {
+  --main-font: #{vars.$main-font};
+  --second-font: #{vars.$second-font};
+  --color: #{vars.$main-color};
+  --bg-color: #{vars.$background-color};
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-items: center;
+  height: 17vw;
+
+  .header-title {
+    height: 75%;
+    display: grid;
+
+    h1 {
+      font-size: vars.$bigger-font-size;
+      font-family: var(--main-font);
+      color: white;
+      align-self: center;
+    }
+  }
+
+  img {
+    width: vars.$img-size;
+    height: vars.$img-size;
+    place-self: end end;
+  }
+
+  background: linear-gradient(
+    var(--color) 0%,
+    var(--color) 75%,
+    var(--bg-color) 75%,
+    var(--bg-color) 100%
+  );
+}
+
+main {
+  padding: 0 5rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      @include mx.form-text;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem 2rem;
+      width: 100%;
+    }
+
+    fieldset {
+      border: 0;
+
+      legend {
+        @include mx.form-text;
+      }
+    }
+
+    .button-type {
+      display: inline-flex;
+      color: black;
+      font-weight: 400;
+      font-family: var(--second-font);
+      margin-left: 0;
+      margin-right: 3rem;
+      align-items: center;
+
+      input {
+        display: none;
+      }
+
+      .custom-mark {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid gray;
+        margin: 0 1rem 0.5rem 0;
+        position: relative;
+      }
+
+      input:checked ~ .custom-mark {
+        background-color: vars.$main-color;
+        border: 0;
+        outline: 4px solid vars.$border-color;
+        border-radius: 50%;
+      }
+
+      input[type="checkbox"]:checked ~ .custom-mark::after {
+        position: absolute;
+        content: "✔";
+        color: white;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    #name {
+      display: flex;
+    }
+
+    #email {
+      display: flex;
+    }
+
+    #pass {
+      display: flex;
+    }
+
+    #info {
+      display: flex;
+    }
+
+    #income {
+      display: flex;
+    }
+
+    #picture {
+      display: flex;
+    }
+
+    #bio {
+      display: flex;
+    }
+  }
+}
