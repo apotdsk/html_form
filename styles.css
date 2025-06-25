@@ -366,6 +366,47 @@ main form label {
   margin-bottom: 0.5rem;
   margin-left: 1rem;
 }
+main form input,
+main form select,
+main form textarea {
+  border-radius: 8px;
+  height: 3rem;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  border: 1px solid gray;
+}
+main form #pass #password {
+  border: 2px solid green;
+}
+main form #pass #password::placeholder {
+  color: green;
+}
+main form #pass #confirmation {
+  border: 2px solid #d64200;
+}
+main form #pass #confirmation::placeholder {
+  color: #d64200;
+}
+main form .range {
+  display: flex;
+}
+main form .range #val {
+  margin-left: auto;
+  width: 5rem;
+  align-self: center;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d64200;
+  border-radius: 8px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+main form .range input {
+  margin-right: 1rem;
+  width: 100%;
+}
 main form .form-group {
   display: flex;
   flex-direction: column;

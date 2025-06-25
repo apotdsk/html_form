@@ -63,6 +63,57 @@ main {
       @include mx.form-text;
     }
 
+    input,
+    select,
+    textarea {
+      border-radius: vars.$border-radius;
+      height: 3rem;
+      box-sizing: border-box;
+      padding-left: 1rem;
+      border: 1px solid gray;
+    }
+
+    #pass {
+      #password {
+        border: 2px solid green;
+      }
+
+      #password::placeholder {
+        color: green;
+      }
+
+      #confirmation {
+        border: 2px solid vars.$main-color;
+      }
+
+      #confirmation::placeholder {
+        color: vars.$main-color;
+      }
+    }
+
+    .range {
+      display: flex;
+
+      #val {
+        margin-left: auto;
+        width: 5rem;
+        align-self: center;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: vars.$main-color;
+        border-radius: vars.$border-radius;
+        color: white;
+        font-family: vars.$main-font;
+      }
+
+      input {
+        margin-right: 1rem;
+        width: 100%;
+      }
+    }
+
     .form-group {
       display: flex;
       flex-direction: column;
