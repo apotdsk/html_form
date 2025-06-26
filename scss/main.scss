@@ -24,7 +24,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   justify-items: center;
-  height: 17vw;
+  height: vars.$header-height;
 
   .header-title {
     height: 75%;
@@ -39,8 +39,8 @@ header {
   }
 
   img {
-    width: vars.$img-size;
-    height: vars.$img-size;
+    width: vars.$obj-size;
+    height: vars.$obj-size;
     place-self: end end;
   }
 
@@ -53,24 +53,27 @@ header {
 }
 
 main {
-  padding: 0 5rem;
+  padding: 0 vars.$main-padding;
+  max-width: vars.$max-width;
 
   form {
     display: flex;
     flex-direction: column;
 
     label {
-      @include mx.form-text;
+      @include mx.title-form-text;
     }
 
     input,
     select,
     textarea {
       border-radius: vars.$border-radius;
-      height: 3rem;
+      height: vars.$input-height;
       box-sizing: border-box;
       padding-left: 1rem;
       border: 1px solid gray;
+      font-family: vars.$second-font;
+      font-size: vars.$main-font-size;
     }
 
     #pass {
@@ -89,6 +92,21 @@ main {
       #confirmation::placeholder {
         color: vars.$main-color;
       }
+    }
+
+    input[type="file"] {
+      border: 0;
+      padding-left: 0;
+    }
+
+    input[type="file"]::file-selector-button {
+      width: vars.$obj-size;
+      height: vars.$input-height;
+      margin-right: 1rem;
+      background-color: vars.$upload-color;
+      color: white;
+      border: 0;
+      border-radius: vars.$border-radius;
     }
 
     .range {
@@ -110,12 +128,15 @@ main {
 
       input {
         margin-right: 1rem;
+        accent-color: vars.$main-color;
+        direction: rtl;
         width: 100%;
       }
     }
 
     .form-group {
       display: flex;
+      box-sizing: border-box;
       flex-direction: column;
       padding: 0 2rem 2rem;
       width: 100%;
@@ -125,7 +146,7 @@ main {
       border: 0;
 
       legend {
-        @include mx.form-text;
+        @include mx.title-form-text;
       }
     }
 
@@ -170,32 +191,88 @@ main {
       }
     }
 
-    #name {
+    textarea {
+      box-sizing: border-box;
+      resize: vertical;
+      height: 20vh;
+    }
+
+    #name,
+    #email,
+    #pass,
+    #info,
+    #income,
+    #picture,
+    #description {
       display: flex;
     }
 
-    #email {
+    .submit-button {
       display: flex;
+      justify-content: flex-end;
+
+      button {
+        width: vars.$adaptive-obj-size;
+        background-color: vars.$main-color;
+        color: white;
+        border: 0;
+        border-radius: vars.$border-radius;
+        height: vars.$input-height;
+        font-family: vars.$second-font;
+      }
+    }
+  }
+}
+
+@media (width <= 500px) {
+  header {
+    img {
+      width: vars.$adaptive-obj-size;
+      height: vars.$adaptive-obj-size;
+    }
+  }
+}
+
+@media (width <= 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    height: vars.$adaptive-header-height;
+    padding: 0 2.5rem;
+
+    h1 {
+      margin: 0;
+      justify-self: center;
+    }
+  }
+
+  main {
+    #name,
+    #email,
+    #pass,
+    #info,
+    #income,
+    #picture,
+    #description {
+      display: flex;
+      flex-direction: column;
     }
 
-    #pass {
-      display: flex;
-    }
+    form {
+      input[type="file"]::file-selector-button {
+        width: vars.$adaptive-obj-size;
+      }
 
-    #info {
-      display: flex;
-    }
-
-    #income {
-      display: flex;
-    }
-
-    #picture {
-      display: flex;
-    }
-
-    #bio {
-      display: flex;
+      .submit-button {
+        button {
+          width: 100%;
+          background-color: white;
+          color: vars.$main-color;
+          border: 2px solid vars.$main-color;
+          border-radius: vars.$border-radius;
+          font-family: vars.$second-font;
+        }
+      }
     }
   }
 }

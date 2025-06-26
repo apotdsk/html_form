@@ -1,6 +1,6 @@
 @use "variables" as vars;
 
-@mixin form-text {
+@mixin title-form-text {
   color: vars.$main-color;
   font-weight: bold;
   font-family: var(--second-font);

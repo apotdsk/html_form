@@ -352,7 +352,8 @@ header img {
 }
 
 main {
-  padding: 0 5rem;
+  padding: 0 5vw;
+  max-width: 90vw;
 }
 main form {
   display: flex;
@@ -374,6 +375,8 @@ main form textarea {
   box-sizing: border-box;
   padding-left: 1rem;
   border: 1px solid gray;
+  font-family: arial, sans-serif;
+  font-size: clamp(0.75rem, 1.25vw, 1rem);
 }
 main form #pass #password {
   border: 2px solid green;
@@ -386,6 +389,19 @@ main form #pass #confirmation {
 }
 main form #pass #confirmation::placeholder {
   color: #d64200;
+}
+main form input[type=file] {
+  border: 0;
+  padding-left: 0;
+}
+main form input[type=file]::file-selector-button {
+  width: 15vw;
+  height: 3rem;
+  margin-right: 1rem;
+  background-color: #77767e;
+  color: white;
+  border: 0;
+  border-radius: 8px;
 }
 main form .range {
   display: flex;
@@ -405,10 +421,13 @@ main form .range #val {
 }
 main form .range input {
   margin-right: 1rem;
+  accent-color: #d64200;
+  direction: rtl;
   width: 100%;
 }
 main form .form-group {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   padding: 0 2rem 2rem;
   width: 100%;
@@ -460,26 +479,72 @@ main form .button-type input[type=checkbox]:checked ~ .custom-mark::after {
   justify-content: center;
   align-items: center;
 }
-main form #name {
+main form textarea {
+  box-sizing: border-box;
+  resize: vertical;
+  height: 20vh;
+}
+main form #name,
+main form #email,
+main form #pass,
+main form #info,
+main form #income,
+main form #picture,
+main form #description {
   display: flex;
 }
-main form #email {
+main form .submit-button {
   display: flex;
+  justify-content: flex-end;
 }
-main form #pass {
-  display: flex;
+main form .submit-button button {
+  width: 25vw;
+  background-color: #d64200;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  height: 3rem;
+  font-family: arial, sans-serif;
 }
-main form #info {
-  display: flex;
+
+@media (width <= 500px) {
+  header img {
+    width: 25vw;
+    height: 25vw;
+  }
 }
-main form #income {
-  display: flex;
-}
-main form #picture {
-  display: flex;
-}
-main form #bio {
-  display: flex;
+@media (width <= 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    padding: 0 2.5rem;
+  }
+  header h1 {
+    margin: 0;
+    justify-self: center;
+  }
+  main #name,
+  main #email,
+  main #pass,
+  main #info,
+  main #income,
+  main #picture,
+  main #description {
+    display: flex;
+    flex-direction: column;
+  }
+  main form input[type=file]::file-selector-button {
+    width: 25vw;
+  }
+  main form .submit-button button {
+    width: 100%;
+    background-color: white;
+    color: #d64200;
+    border: 2px solid #d64200;
+    border-radius: 8px;
+    font-family: arial, sans-serif;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
