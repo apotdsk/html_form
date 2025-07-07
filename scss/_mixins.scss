@@ -1,0 +1,10 @@
+@use "variables" as vars;
+
+@mixin title-form-text {
+  color: vars.$main-color;
+  font-weight: bold;
+  font-family: var(--second-font);
+  font-size: vars.$main-font-size;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
